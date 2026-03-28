@@ -1,0 +1,99 @@
+2026-03-28 10:56:10,062 - ERROR - binance_cli - Invalid price for LIMIT order: None
+2026-03-28 10:56:37,277 - ERROR - binance_cli - Missing BINANCE_API_KEY or BINANCE_API_SECRET environment variables
+2026-03-28 11:48:15,876 - DEBUG - binance_cli - Binance client successfully authenticated and initialized for testnet.
+2026-03-28 11:48:15,878 - INFO - binance_cli - Preparing to place BUY MARKET order for 0.001 BTCUSDT...
+2026-03-28 11:48:15,878 - DEBUG - binance_cli - API Request params for futures_create_order: {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': 0.001}
+2026-03-28 11:48:17,127 - ERROR - binance_cli - Binance API Exception: 401 - Invalid API-key, IP, or permissions for action
+2026-03-28 11:48:17,127 - ERROR - binance_cli - An unexpected error occurred: Binance API Error: Invalid API-key, IP, or permissions for action
+Traceback (most recent call last):
+  File "C:\Users\Rahul Dev\Desktop\Binance\bot\orders.py", line 63, in place_order
+    response = client.futures_create_order(**params)
+  File "C:\Users\Rahul Dev\Desktop\Binance\venv\Lib\site-packages\binance\client.py", line 7951, in futures_create_order
+    return self._request_futures_api("post", "order", True, data=params)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Rahul Dev\Desktop\Binance\venv\Lib\site-packages\binance\client.py", line 144, in _request_futures_api
+    return self._request(method, uri, signed, force_params, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Rahul Dev\Desktop\Binance\venv\Lib\site-packages\binance\client.py", line 107, in _request
+    return self._handle_response(self.response)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Rahul Dev\Desktop\Binance\venv\Lib\site-packages\binance\client.py", line 116, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=-2015): Invalid API-key, IP, or permissions for action
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Rahul Dev\Desktop\Binance\cli.py", line 54, in main
+    result = place_order(client, symbol, side, order_type, quantity, price)
+  File "C:\Users\Rahul Dev\Desktop\Binance\bot\orders.py", line 77, in place_order
+    raise Exception(f"Binance API Error: {e.message}")
+Exception: Binance API Error: Invalid API-key, IP, or permissions for action
+2026-03-28 11:51:51,984 - DEBUG - binance_cli - Binance client successfully authenticated and initialized for testnet.
+2026-03-28 11:51:51,984 - INFO - binance_cli - Preparing to place BUY MARKET order for 0.001 BTCUSDT...
+2026-03-28 11:51:51,984 - DEBUG - binance_cli - API Request params for futures_create_order: {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': 0.001}
+2026-03-28 11:51:53,170 - ERROR - binance_cli - Binance API Exception: 400 - Order's notional must be no smaller than 100 (unless you choose reduce only).
+2026-03-28 11:51:53,171 - ERROR - binance_cli - An unexpected error occurred: Binance API Error: Order's notional must be no smaller than 100 (unless you choose reduce only).
+Traceback (most recent call last):
+  File "C:\Users\Rahul Dev\Desktop\Binance\bot\orders.py", line 63, in place_order
+    response = client.futures_create_order(**params)
+  File "C:\Users\Rahul Dev\Desktop\Binance\venv\Lib\site-packages\binance\client.py", line 7951, in futures_create_order
+    return self._request_futures_api("post", "order", True, data=params)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Rahul Dev\Desktop\Binance\venv\Lib\site-packages\binance\client.py", line 144, in _request_futures_api
+    return self._request(method, uri, signed, force_params, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Rahul Dev\Desktop\Binance\venv\Lib\site-packages\binance\client.py", line 107, in _request
+    return self._handle_response(self.response)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Rahul Dev\Desktop\Binance\venv\Lib\site-packages\binance\client.py", line 116, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=-4164): Order's notional must be no smaller than 100 (unless you choose reduce only).
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Rahul Dev\Desktop\Binance\cli.py", line 54, in main
+    result = place_order(client, symbol, side, order_type, quantity, price)
+  File "C:\Users\Rahul Dev\Desktop\Binance\bot\orders.py", line 77, in place_order
+    raise Exception(f"Binance API Error: {e.message}")
+Exception: Binance API Error: Order's notional must be no smaller than 100 (unless you choose reduce only).
+2026-03-28 11:53:21,642 - DEBUG - binance_cli - Binance client successfully authenticated and initialized for testnet.
+2026-03-28 11:53:21,642 - INFO - binance_cli - Preparing to place BUY MARKET order for 0.003 BTCUSDT...
+2026-03-28 11:53:21,642 - DEBUG - binance_cli - API Request params for futures_create_order: {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': 0.003}
+2026-03-28 11:53:22,894 - INFO - binance_cli - Order 13001411824 successfully placed on Binance Testnet.
+2026-03-28 11:53:22,894 - DEBUG - binance_cli - API Full Response: {'orderId': 13001411824, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJ50938f7e306f10a93e80f8', 'price': '0.00', 'avgPrice': '0.00', 'origQty': '0.003', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1774679003765}
+2026-03-28 11:53:45,705 - DEBUG - binance_cli - Binance client successfully authenticated and initialized for testnet.
+2026-03-28 11:53:45,705 - INFO - binance_cli - Preparing to place BUY LIMIT order for 0.003 BTCUSDT...
+2026-03-28 11:53:45,706 - DEBUG - binance_cli - API Request params for futures_create_order: {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'LIMIT', 'quantity': 0.003, 'timeInForce': 'GTC', 'price': 80000.0}
+2026-03-28 11:53:47,141 - ERROR - binance_cli - Binance API Exception: 400 - Limit price can't be higher than 69727.25.
+2026-03-28 11:53:47,141 - ERROR - binance_cli - An unexpected error occurred: Binance API Error: Limit price can't be higher than 69727.25.
+Traceback (most recent call last):
+  File "C:\Users\Rahul Dev\Desktop\Binance\bot\orders.py", line 63, in place_order
+    response = client.futures_create_order(**params)
+  File "C:\Users\Rahul Dev\Desktop\Binance\venv\Lib\site-packages\binance\client.py", line 7951, in futures_create_order
+    return self._request_futures_api("post", "order", True, data=params)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Rahul Dev\Desktop\Binance\venv\Lib\site-packages\binance\client.py", line 144, in _request_futures_api
+    return self._request(method, uri, signed, force_params, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Rahul Dev\Desktop\Binance\venv\Lib\site-packages\binance\client.py", line 107, in _request
+    return self._handle_response(self.response)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\Rahul Dev\Desktop\Binance\venv\Lib\site-packages\binance\client.py", line 116, in _handle_response
+    raise BinanceAPIException(response, response.status_code, response.text)
+binance.exceptions.BinanceAPIException: APIError(code=-4016): Limit price can't be higher than 69727.25.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Rahul Dev\Desktop\Binance\cli.py", line 54, in main
+    result = place_order(client, symbol, side, order_type, quantity, price)
+  File "C:\Users\Rahul Dev\Desktop\Binance\bot\orders.py", line 77, in place_order
+    raise Exception(f"Binance API Error: {e.message}")
+Exception: Binance API Error: Limit price can't be higher than 69727.25.
+2026-03-28 11:54:58,616 - DEBUG - binance_cli - Binance client successfully authenticated and initialized for testnet.
+2026-03-28 11:54:58,616 - INFO - binance_cli - Preparing to place BUY LIMIT order for 0.003 BTCUSDT...
+2026-03-28 11:54:58,617 - DEBUG - binance_cli - API Request params for futures_create_order: {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'LIMIT', 'quantity': 0.003, 'timeInForce': 'GTC', 'price': 60000.0}
+2026-03-28 11:54:59,875 - INFO - binance_cli - Order 13001413905 successfully placed on Binance Testnet.
+2026-03-28 11:54:59,876 - DEBUG - binance_cli - API Full Response: {'orderId': 13001413905, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJ6508e983bfb98842618a14', 'price': '60000.00', 'avgPrice': '0.00', 'origQty': '0.003', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1774679100721}
